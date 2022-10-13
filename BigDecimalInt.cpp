@@ -20,7 +20,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
 }
 
 
-// doesnot works with negative
+// doesnot work with negative
 bool BigDecimalInt::operator>(BigDecimalInt anotherDec){
 
     if(num.length() == anotherDec.num.length()){
@@ -49,7 +49,7 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec){
 //////////////////////////////////////////////////////////
 
 
-// doesnot works with negative
+// doesnot work with negative
 bool BigDecimalInt::operator<(BigDecimalInt anotherDec){
 
     if(num.length() == anotherDec.num.length()){
