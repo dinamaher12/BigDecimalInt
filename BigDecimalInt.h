@@ -5,7 +5,7 @@ using namespace std;
 class BigDecimalInt{
 private:
     string num;
-    
+
 public:
     BigDecimalInt(string decStr);
     BigDecimalInt(int decInt);
@@ -17,6 +17,7 @@ public:
     BigDecimalInt operator=(BigDecimalInt anotherDec);
     int size();
     int sign();
+    string getstr();
     friend ostream& operator<<(ostream& out, BigDecimalInt b);
 };
 
