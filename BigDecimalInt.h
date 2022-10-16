@@ -7,8 +7,8 @@ private:
     string num;
 
 public:
-    // constructor
-    BigDecimalInt(string decStr); // rejects bad inputs
+    
+    BigDecimalInt(string decStr); 
 
 
     BigDecimalInt(int decInt);
@@ -24,7 +24,7 @@ public:
 
     bool operator==(BigDecimalInt anotherDec);
 
-    BigDecimalInt operator=(BigDecimalInt anotherDec); // lsa msh 3arfa
+    BigDecimalInt operator=(BigDecimalInt anotherDec); 
 
     int size();
 
