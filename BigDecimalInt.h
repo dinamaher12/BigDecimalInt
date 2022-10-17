@@ -1,18 +1,17 @@
 #ifndef P2_BIGDECIMALINT_H
 #define P2_BIGDECIMALINT_H
 #include<bits/stdc++.h>
-
 using namespace std;
 class BigDecimalInt{
 private:
     string num;
 
 public:
-    // constructor
-    BigDecimalInt(string decStr); // rejects bad inputs
+    
+    BigDecimalInt(string decStr); 
 
 
-    BigDecimalInt(long long int decInt);
+    BigDecimalInt(int decInt);
     string getstr();
 
     BigDecimalInt operator+(BigDecimalInt anotherDec);
@@ -25,7 +24,7 @@ public:
 
     bool operator==(BigDecimalInt anotherDec);
 
-    BigDecimalInt operator=(BigDecimalInt anotherDec); // lsa msh 3arfa
+    BigDecimalInt operator=(BigDecimalInt anotherDec); 
 
     int size();
 

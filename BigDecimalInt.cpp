@@ -1,5 +1,6 @@
 #include"BigDecimalInt.h"
 #include<bits/stdc++.h>
+using namespace std;
 
 string BigDecimalInt::getstr(){
     return num;
@@ -9,79 +10,12 @@ BigDecimalInt::BigDecimalInt(string decStr) {
     num = decStr;
 }
 
-BigDecimalInt::BigDecimalInt(long long int decInt) {
-    num = to_string(decInt);
+BigDecimalInt::BigDecimalInt(int decInt) {
 
 }
 
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
-    string x = anotherDec.getstr(), result="";
-    int m=0;
-    string k=x;
-    if(x[0]!='-'& num[0]!='-' || x[0]=='-'& num[0]=='-'){
-        if(x[0]=='-'& num[0]=='-'){
-            x.erase(x.begin());num.erase(num.begin());
-        }
-        while (x.size()>num.size()){
-            num='0'+num;
-        }
-        for(int i=0;i<num.size();i++){
 
-        }
-        while (x.size()<num.size()){
-            x='0'+x;
-        }
-        for(int i=0;i<x.size();i++){
-        }
-        for(int i=x.size()-1;i>=0;i--){
-            m=(x[i]-'0')+(num[i]-'0')+m;
-
-            result =char((m%10)+'0')+result;
-
-            m/=10;
-        }
-        if(m==1){
-            result='1'+result;
-        }
-        if(k[0]=='-'){
-            result='-'+result;
-        }
-    /*
-    if(x[0]!='-'& num[0]=='-'){
-        if(x[0]!='-'& num[0]=='-'){
-            num.erase(num.begin());
-        }
-        while (x.size()>num.size()){
-            num='0'+num;
-        }
-        for(int i=0;i<num.size();i++){
-            cout<< num[i];
-        }
-        cout<<endl;
-        while (x.size()<num.size()){
-            x='0'+x;
-        }
-        for(int i=0;i<x.size();i++){
-            cout<< x[i];
-        }
-        cout<<endl;
-        for(int i=x.size()-1;i>=0;i--){
-            m=(num[i]-'0')-(x[i]-'0')+m;
-            cout<<m;
-            cout<<endl;
-            result =char((m%10)+'0')+result;
-            cout<<result;
-            cout<<endl;
-            m/=10;
-            cout<<m;
-            cout<<endl;
-        }
-        if(m==1){
-            result='1'+result;
-        */
-    }
-
-    return result;
 }
 
 
@@ -224,3 +158,4 @@ int BigDecimalInt::size() {
     out << b.num;
 
 }
+
