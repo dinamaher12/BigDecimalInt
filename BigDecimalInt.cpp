@@ -20,7 +20,27 @@ BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
 
 
 BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
-
+    string x = anotherDec.getstr();
+    bool xPos = false,numPos = false;
+    if (x[0] != '-'){
+        xPos = true;
+    }
+    if (num[0] != '-'){
+        numPos = true;
+    }
+    if (numPos && (!xPos)){
+        x.erase(x.begin());
+        return num + x;
+    }
+    if ((!numPos) && xPos){
+        if (x[0] == '+'){
+            x[0] = '-';
+        }
+        else{
+            x = '-' + x;
+        }
+        return num + x;
+    }
 }
 
 
