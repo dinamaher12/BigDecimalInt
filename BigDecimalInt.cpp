@@ -15,7 +15,35 @@ BigDecimalInt::BigDecimalInt(int decInt) {
 }
 
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
+    string x = anotherDec.getstr();
+    string result="";
+    int m=0;
+    string k=x;
+    if(x[0]!='-'& num[0]!='-' ||x[0]=='-'& num[0]=='-'){
+        if(x[0]=='-'& num[0]=='-'){
+            num.erase(num.begin());
+            x.erase(x.begin());
+        }
+        while(x.size()>num.size()){
+            num='0'+num;
+        }
+        while(x.size()<num.size()){
+            x='0'+x;
+        }
+        for(int i=x.size()-1;i>=0;i--){
+            m=(x[i]-'0')+(num[i]-'0')+m;
+            result=char((m%10)+'0')+result;
+            m/=10;
+        }
+        if(m==1){
+            result='1'+result;
+        }
+        if(k[0]=='-'){
+            result='-'+result;
+        }
+    }
 
+    return result;
 }
 
 
