@@ -8,8 +8,7 @@ private:
 
 public:
     
-    BigDecimalInt(string decStr); 
-
+    BigDecimalInt(string decStr);
 
     BigDecimalInt(int decInt);
     string getstr();
