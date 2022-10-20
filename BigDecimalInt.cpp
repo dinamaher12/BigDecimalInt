@@ -110,7 +110,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
                 else{
                     while(x[slider] == '0'){
                         x[slider] = '9';
-                        ++slider;
+                        slider++;
                         if (x[slider] != '0'){
                             x[slider] = (char)(x[slider] - 1);
                         }
