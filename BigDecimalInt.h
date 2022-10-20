@@ -10,7 +10,11 @@ public:
     
     BigDecimalInt(string decStr);
 
-    BigDecimalInt(int decInt);
+
+    void setstr(string s);
+
+    BigDecimalInt(long long decInt);
+
     string getstr();
 
     BigDecimalInt operator+(BigDecimalInt anotherDec);
