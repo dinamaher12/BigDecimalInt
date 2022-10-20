@@ -14,8 +14,8 @@ BigDecimalInt::BigDecimalInt(string decStr) {
     num = decStr;
 }
 
-BigDecimalInt::BigDecimalInt(long long decInt) {
-    num= to_string(decInt);
+BigDecimalInt::BigDecimalInt(int decInt) {
+
 }
 
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
@@ -110,7 +110,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
                 else{
                     while(x[slider] == '0'){
                         x[slider] = '9';
-                        slider++;
+                        ++slider;
                         if (x[slider] != '0'){
                             x[slider] = (char)(x[slider] - 1);
                         }

@@ -9,11 +9,9 @@ private:
 public:
     
     BigDecimalInt(string decStr);
-
-
     void setstr(string s);
 
-    BigDecimalInt(long long decInt);
+    BigDecimalInt(int decInt);
 
     string getstr();
 
