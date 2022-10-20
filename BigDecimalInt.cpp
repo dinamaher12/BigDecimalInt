@@ -92,6 +92,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
     if (t[0] == '-' || t[0] == '+'){
         t.erase(t.begin());
     }
+
     anotherDec.setstr(x);
     if (this->operator<(anotherDec)){
         while(x.size() > t.size()){
