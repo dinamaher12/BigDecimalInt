@@ -14,8 +14,8 @@ BigDecimalInt::BigDecimalInt(string decStr) {
     num = decStr;
 }
 
-BigDecimalInt::BigDecimalInt(int decInt) {
-
+BigDecimalInt::BigDecimalInt(long long decInt) {
+    num= to_string(decInt);
 }
 
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){

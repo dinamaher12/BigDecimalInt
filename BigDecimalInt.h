@@ -12,7 +12,7 @@ public:
 
     void setstr(string s);
 
-    BigDecimalInt(int decInt);
+    BigDecimalInt(long long decInt);
 
     string getstr();
 
