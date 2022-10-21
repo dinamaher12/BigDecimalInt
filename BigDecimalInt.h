@@ -5,7 +5,7 @@ using namespace std;
 class BigDecimalInt{
 private:
     string num;
-
+    string temp;
 public:
     
     BigDecimalInt(string decStr);

@@ -10,19 +10,20 @@ void BigDecimalInt::setstr(string s){
     num = s;
 }
 
-BigDecimalInt::BigDecimalInt(string decStr) {
-    num = decStr;
+BigDecimalInt::BigDecimalInt(string decStr):num(decStr),temp(decStr){
+
 }
 
 BigDecimalInt::BigDecimalInt(long long decInt) {
     num= to_string(decInt);
+    temp = to_string(decInt);
 }
 
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
     string x = anotherDec.getstr();
-    string result="";
-    int m=0;
-    string k=x;
+    string result = "";
+    int m = 0;
+    string k = x;
     if(x[0]!='-' && num[0]!='-' || x[0]=='-' && num[0]=='-'){
         if(x[0]=='-'&& num[0]=='-'){
             num.erase(num.begin());
@@ -44,6 +45,9 @@ BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec){
         }
         if(k[0]=='-'){
             result='-'+result;
+        }
+        while(result[0] == '0'){
+            result.erase(result.begin());
         }
         return result;
     }
@@ -130,7 +134,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
         }
         x = '-' + x;
         anotherDec.setstr(x);
-        return anotherDec;
+        return x;
     }
     else{
         while(t.size() > x.size()){
@@ -164,7 +168,7 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec){
             }
         }
         anotherDec.setstr(x);
-        return anotherDec;
+        return x;
     }
 }
 
@@ -235,8 +239,6 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec){
     else{
         return(sz2 > sz1) && (isPositive);
     }
-
-
 }
 
 bool BigDecimalInt::operator==(BigDecimalInt anotherDec){
@@ -256,12 +258,10 @@ bool BigDecimalInt::operator==(BigDecimalInt anotherDec){
 }
 
 BigDecimalInt BigDecimalInt::operator=(BigDecimalInt anotherDec) {
-
     for(int i = 0; i < num.length(); i++){
         num[i] = anotherDec.num[i];
 
     }
-
 }
 
 int BigDecimalInt::sign(){
@@ -281,7 +281,6 @@ int BigDecimalInt::sign(){
         }
         num = s;
         return 1;
-
     }
     else{
         return 0;
@@ -296,8 +295,7 @@ int BigDecimalInt::size() {
 
 
 
- ostream& operator<<(ostream& out, BigDecimalInt b){
-    out << b.num;
-
+ostream& operator<<(ostream& out, BigDecimalInt b){
+    out << b.temp;
 }
 
